@@ -1,0 +1,23 @@
+{% import "_includes/forms" as forms %}
+
+{% set sectionInput %}
+    <div class="select">
+
+    </div>
+{% endset %}
+
+{{ forms.textField({
+    label: "Account Manager"|t('app'),
+    id: 'accountManager',
+    name: 'accountManager',
+    value: widget.accountManager,
+    errors: widget.getErrors('accountManager')
+}) }}
+
+{{ forms.textField({
+    label: "Project Management Url"|t('app'),
+    id: 'projectManagementUrl',
+    name: 'projectManagementUrl',
+    value: widget.projectManagementUrl,
+    errors: widget.getErrors('projectManagementUrl')
+}) }}
