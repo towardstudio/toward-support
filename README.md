@@ -1,6 +1,6 @@
 # Toward Support plugin for Craft CMS 3.x
 
-Create a tab to see how many times a job has been viewed
+Dashboard Widgets for Support
 
 ## Requirements
 
