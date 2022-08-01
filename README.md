@@ -4,7 +4,7 @@ Dashboard Widgets for Support
 
 ## Requirements
 
-This plugin requires Craft CMS 4 or later.
+This plugin requires Craft CMS 3 or later.
 
 ## Installation
 
