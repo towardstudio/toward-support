@@ -9,8 +9,8 @@ use craft\widgets\Feed;
 
 class NewsWidget extends Feed
 {
-	public $title = "Toward News";
-	public $url = "https://toward.studio/feed.rss";
+	public ?string $title = "Toward News";
+	public ?string $url = "https://toward.studio/feed.rss";
 
 	/**
 	 * @inheritdoc

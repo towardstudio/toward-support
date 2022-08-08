@@ -1,14 +1,14 @@
 <div class="support-container">
-    <p>{{ "Your account manager"| t('app') }}</p>
     {% if manager is not empty %}
-        <p><strong>{{ manager }}</strong></p>
+		<p>{{ "Your account manager is"| t('toward-support') }} <strong>{{ manager }}</strong></p>
+		<p>{{ "We're in the studio 8:30 - 17:00 Monday to Friday. We aim to get back to you within 24 hours."| t('toward-support') }}</p>
     {% else %}
-        <p><strong>{{ "Please add an account manager"| t('app') }}</strong></p>
+        <p><strong>{{ "Please add an account manager"| t('toward-support') }}</strong></p>
     {% endif %}
 
     {% if url is not empty %}
         <a class="btn secondary" href="{{ url }}" title="View Project Management Board" target="_blank">
-            {{ "View Project Management Board"| t('app')  }}
+            {{ "Get support" | t('toward-support')  }}
         </a>
     {% endif %}
 </div>

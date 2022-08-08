@@ -24,18 +24,18 @@ class SupportWidget extends Widget
      */
     public static function displayName(): string
     {
-        return Craft::t("app", "Toward Support");
+        return Craft::t("toward-support", "Toward Support");
     }
 
     public function getTitle(): string
     {
-        return Craft::t("app", "Toward Support");
+        return Craft::t("toward-support", "Toward Support");
     }
 
     /**
      * @inheritdoc
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         return Craft::$app
             ->getView()

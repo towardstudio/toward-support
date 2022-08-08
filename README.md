@@ -1,10 +1,10 @@
-# Toward Support plugin for Craft CMS 3.x
+# Toward Support plugin for Craft CMS 4.x
 
 Dashboard Widgets for Support
 
 ## Requirements
 
-This plugin requires Craft CMS 3 or later.
+This plugin requires Craft CMS 4 or later.
 
 ## Installation
 
