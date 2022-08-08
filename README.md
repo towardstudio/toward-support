@@ -22,7 +22,7 @@ cd /path/to/project/craft
 composer require toward/towardsupport
 ```
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Job Views.
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Toward Support.
 
 [Bluegg Disclaimer](https://github.com/Bluegg/bluegg-open-source-disclaimer)
 
