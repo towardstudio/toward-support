@@ -3,14 +3,13 @@
 		<p>{{ "Please speak to your admin to add an account manager & support URL for your website" | t('toward-support') }}</p>
 	{% else %}
     	{% if manager is not empty %}
-			<p>{{ "Your account manager is"| t('toward-support') }} <strong>{{ manager }}</strong></p>
-			{% if info %}
-				<p>{{ info }}</p>
-			{% endif %}
+			  <p>{{ "Your account manager is"| t('toward-support') }} <strong>{{ manager }}</strong></p>
+        {% if info %}
+          <p>{{ info }}</p>
+        {% endif %}
     	{% else %}
         	<p><strong>{{ "Please add an account manager"| t('toward-support') }}</strong></p>
     	{% endif %}
-
     	{% if url is not empty %}
         	<a class="btn secondary" href="{{ url }}" title="View Project Management Board" target="_blank">
             	{{ "Get support" | t('toward-support')  }}
