@@ -10,12 +10,6 @@ use yii\base\Component;
 
 class SupportWidget extends Widget
 {
-    // Public Properties
-    // =========================================================================
-
-    public $accountManager;
-    public $projectManagementUrl;
-
     // Public Methods
     // =========================================================================
 
@@ -32,30 +26,17 @@ class SupportWidget extends Widget
         return Craft::t("toward-support", "Toward Support");
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getSettingsHtml(): ?string
-    {
-        return Craft::$app
-            ->getView()
-            ->renderTemplate(
-                "toward-support/_components/widgets/SupportWidget/settings",
-                [
-                    "widget" => $this,
-                ]
-            );
-    }
-
     public function getBodyHtml(): string
     {
+		$settings = TowardSupport::$plugin->getSettings();
+
         return Craft::$app
             ->getView()
             ->renderTemplate(
                 "toward-support/_components/widgets/SupportWidget/body",
                 [
-                    "manager" => $this->accountManager,
-                    "url" => $this->projectManagementUrl,
+                    "manager" => $settings->accountManager,
+                    "url" => $settings->supportUrl,
                 ]
             );
     }

@@ -3,17 +3,19 @@ namespace toward\towardsupport;
 
 use Craft;
 use craft\base\Element;
+use craft\base\Model;
 use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\RegisterUrlRulesEvent;
 use craft\events\PluginEvent;
+use craft\helpers\UrlHelper;
 use craft\services\Plugins;
 use craft\services\Dashboard;
 use craft\web\UrlManager;
 use craft\web\View;
 
-use toward\towardsupport\services\Widgets as WidgetService;
+use toward\towardsupport\models\Settings;
 use toward\towardsupport\widgets\SupportWidget;
 use toward\towardsupport\widgets\NewsWidget;
 
@@ -28,6 +30,8 @@ use yii\base\Event;
 class TowardSupport extends Plugin
 {
     public static $plugin;
+	public bool $hasCpSettings = true;
+	public static ?Settings $settings;
 
     // Public Methods
     // =========================================================================
@@ -36,6 +40,7 @@ class TowardSupport extends Plugin
     {
         parent::init();
         self::$plugin = $this;
+		self::$settings = $this->getSettings();
 
         // Set Components
         $this->setComponents([
@@ -45,27 +50,17 @@ class TowardSupport extends Plugin
         // Register our widgets
         $this->_registerWidgets();
 
-        // Register our CP routes
-        Event::on(
-            UrlManager::class,
-            UrlManager::EVENT_REGISTER_CP_URL_RULES,
-            function (RegisterUrlRulesEvent $event) {
-                $event->rules["cpActionTrigger1"] =
-                    "jobs-module/default/do-something";
-            }
-        );
-
         // Handler: EVENT_AFTER_INSTALL_PLUGIN
         Event::on(
             Plugins::class,
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
-                    // Remove old Widgets
-                    $this->widgets->removeOldWidgets();
-
-                    // Add our widget
-                    $this->widgets->createWidgets();
+                    // Send them to our settings screen
+                    $request = Craft::$app->getRequest();
+                    if ($request->isCpRequest) {
+                        Craft::$app->getResponse()->redirect(UrlHelper::cpUrl('settings/plugins/toward-support'))->send();
+                    }
                 }
             }
         );
@@ -92,4 +87,24 @@ class TowardSupport extends Plugin
             }
         );
     }
+
+	// Protected Methods
+	// =========================================================================
+
+	/**
+	 * @inheritdoc
+	 */
+	protected function createSettingsModel(): ?Model
+	{
+		return new Settings();
+	}
+
+	protected function settingsHtml(): string
+	{
+		return Craft::$app
+			->getView()
+			->renderTemplate("toward-support/settings", [
+				"settings" => $this->getSettings(),
+			]);
+	}
 }

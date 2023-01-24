@@ -1,0 +1,17 @@
+{% import '_includes/forms' as forms %}
+{{
+	forms.textField({
+		label: 'Account Manager' | t ('toward-support'),
+		id: 'accountManager',
+		name: 'accountManager',
+		value: settings.accountManager ?? null
+	})
+}}
+{{
+	forms.textField({
+		label: 'Support URL' | t ('toward-support'),
+		id: 'supportUrl',
+		name: 'supportUrl',
+		value: settings.supportUrl ?? null
+	})
+}}
