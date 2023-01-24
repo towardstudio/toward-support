@@ -1,0 +1,55 @@
+{% import '_includes/forms' as forms %}
+
+{% macro errorList(errors) %}
+    {% if errors %}
+        {{ ul(errors, {class: 'errors'}) }}
+    {% endif %}
+{% endmacro %}
+
+<div id="settings-accountManager-field" class="field" data-attribute="accountManager">
+	<div class="heading">
+		<label id="settings-accountManager-label" for="settings-accountManager">
+			{{ 'Account Manager' | t ('toward-support') }}
+		</label>
+	</div>
+	<div class="input ltr">
+		{{ input('text', 'accountManager', settings.accountManager ?? '', {
+        	id: 'accountManager',
+			class: 'text fullwidth',
+    	}) }}
+		{{ settings ? _self.errorList(settings.getErrors('accountManager')) }}
+	</div>
+</div>
+
+<div id="settings-companyInfo-field" class="field" data-attribute="companyInfo">
+	<div class="heading">
+		<label id="settings-companyInfo-label" for="settings-companyInfo">
+			{{ 'Company Info' | t ('toward-support') }}
+		</label>
+	</div>
+	<div class="input ltr">
+		{{ tag('textarea', {
+        	text: settings.companyInfo ?? '',
+        	id: 'companyInfo',
+			class: 'text fullwidth',
+        	name: 'companyInfo',
+        	rows: 2,
+    	}) }}
+		{{ settings ? _self.errorList(settings.getErrors('companyInfo')) }}
+	</div>
+</div>
+
+<div id="settings-supportUrl-field" class="field" data-attribute="supportUrl">
+	<div class="heading">
+		<label id="settings-supportUrl-label" for="settings-supportUrl">
+			{{ 'Support Url' | t ('toward-support') }}
+		</label>
+	</div>
+	<div class="input ltr">
+		{{ input('text', 'supportUrl', settings.supportUrl ?? '', {
+        	id: 'supportUrl',
+			class: 'text fullwidth',
+    	}) }}
+		{{ settings ? _self.errorList(settings.getErrors('supportUrl')) }}
+	</div>
+</div>
