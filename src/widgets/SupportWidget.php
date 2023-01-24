@@ -36,6 +36,7 @@ class SupportWidget extends Widget
                 "toward-support/_components/widgets/SupportWidget/body",
                 [
                     "manager" => $settings->accountManager,
+                    "info" => $settings->companyInfo,
                     "url" => $settings->supportUrl,
                 ]
             );

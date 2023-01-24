@@ -15,6 +15,7 @@ class Settings extends Model
 
 	public $name = "Toward Support";
 	public $accountManager;
+	public $companyInfo = "We're in the studio 8:30 - 17:00 Monday to Friday. We aim to get back to you within 24 hours.";
 	public $supportUrl;
 
 	// Public Methods
@@ -26,8 +27,8 @@ class Settings extends Model
 	public function rules(): array
 	{
 		return [
-			["accountManager", "string"],
-			["supportUrl", "string"],
+			[['accountManager', 'companyInfo', 'supportUrl'], 'required'],
+			[['accountManager', 'companyInfo', 'supportUrl'], 'string'],
 		];
 	}
 }
