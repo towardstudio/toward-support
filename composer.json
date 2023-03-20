@@ -1,12 +1,12 @@
 {
-    "name": "toward/towardsupport",
+    "name": "towardstudio/towardsupport",
     "description": "Widget for displaying Toward Support Information & News",
     "type": "craft-plugin",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "license": "MIT",
     "authors": [
         {
-            "name": "Toward",
+            "name": "Toward Studio",
             "homepage": "https://toward.studio"
         }
     ],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "toward\\towardsupport\\": "src/"
+            "towardstudio\\towardsupport\\": "src/"
         }
     },
     "extra": {
@@ -23,6 +23,6 @@
         "handle": "toward-support",
         "developer": "Toward",
         "developerUrl": "https://toward.studio",
-        "class": "toward\\towardsupport\\TowardSupport"
+        "class": "towardstudio\\towardsupport\\TowardSupport"
     }
 }

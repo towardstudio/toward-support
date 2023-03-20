@@ -1,5 +1,5 @@
 <?php
-namespace toward\towardsupport;
+namespace towardstudio\towardsupport;
 
 use Craft;
 use craft\base\Element;
@@ -15,9 +15,9 @@ use craft\services\Dashboard;
 use craft\web\UrlManager;
 use craft\web\View;
 
-use toward\towardsupport\models\Settings;
-use toward\towardsupport\widgets\SupportWidget;
-use toward\towardsupport\widgets\NewsWidget;
+use towardstudio\towardsupport\models\Settings;
+use towardstudio\towardsupport\widgets\SupportWidget;
+use towardstudio\towardsupport\widgets\NewsWidget;
 
 use yii\base\Event;
 

@@ -1,7 +1,7 @@
 <?php
-namespace toward\towardsupport\widgets;
+namespace towardstudio\towardsupport\widgets;
 
-use toward\towardsupport\TowardSupport;
+use towardstudio\towardsupport\TowardSupport;
 
 use Craft;
 use craft\base\Widget;

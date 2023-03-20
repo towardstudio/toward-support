@@ -1,5 +1,5 @@
 <?php
-namespace toward\towardsupport\models;
+namespace towardstudio\towardsupport\models;
 
 use Craft;
 use craft\base\Model;
