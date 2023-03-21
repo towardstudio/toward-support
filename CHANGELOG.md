@@ -25,3 +25,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 2.0.0 - 2022-03-20
 
 -   Change Bluegg to Toward
+
+## 2.0.1 - 2022-03-21
+
+-   Change Bluegg to Toward

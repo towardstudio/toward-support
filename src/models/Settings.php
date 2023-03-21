@@ -27,8 +27,23 @@ class Settings extends Model
 	public function rules(): array
 	{
 		return [
-			[['accountManager', 'companyInfo', 'supportUrl'], 'required'],
-			[['accountManager', 'companyInfo', 'supportUrl'], 'string'],
+			[
+				[
+					'accountManager',
+					'companyInfo',
+					'supportUrl'
+				],
+				'required'
+			],
+			[
+				[
+					'accountManager',
+					'companyInfo'
+				],
+				'string'
+			],
+			['supportUrl', 'url', 'defaultScheme' => 'http'],
+
 		];
 	}
 }
