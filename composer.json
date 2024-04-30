@@ -2,7 +2,7 @@
 	"name": "towardstudio/towardsupport",
 	"description": "Widget for displaying Toward Support Information & News",
 	"type": "craft-plugin",
-	"version": "2.2.1",
+	"version": "3.0.0",
 	"license": "MIT",
 	"authors": [
 		{
@@ -11,7 +11,7 @@
 		}
 	],
 	"require": {
-		"craftcms/cms": "^4.0.0"
+		"craftcms/cms": "^5.0.0"
 	},
 	"autoload": {
 		"psr-4": {
